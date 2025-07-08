@@ -3,11 +3,12 @@ package com.jsatomi.ChallengeLiteratura;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class ChallengeLiteraturaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ChallengeLiteraturaApplication.class, args);
+//		SpringApplication.run(ChallengeLiteraturaApplication.class, args);
+		System.out.println("Hola Mundo! con GitHub");
 	}
 
 }

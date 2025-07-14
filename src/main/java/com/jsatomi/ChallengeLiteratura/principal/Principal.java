@@ -95,12 +95,12 @@ public class Principal {
             System.out.println("Libro encontrado");
             System.out.println(datosLibros);
 
-            if(!libroRepository.existsByNombreLibroAndNombreAutor(datosLibros.nombreLibro(),
+            if (!libroRepository.existsByNombreLibroAndNombreAutor(datosLibros.nombreLibro(),
                     datosLibros.nombreAutores().get(0).nombreAutor())) {
                 Libro libro = new Libro(datosLibros);
                 libroRepository.save(libro);
                 System.out.println("Libro guardado exitosamente");
-            }else{
+            } else {
                 System.out.println("Libro existente en base de datos");
             }
         }
@@ -131,7 +131,7 @@ public class Principal {
         }
     }
 
-    public void mostrarLibrosBuscados(){
+    public void mostrarLibrosBuscados() {
         libros = libroRepository.findAll();
         libros.stream()
                 .sorted(Comparator.comparing(Libro::getDescargas))
@@ -154,11 +154,7 @@ public class Principal {
         System.out.println("Ingrese el idioma en el que desea buscar libros");
         String user = scanner.nextLine();
 
-        List<Libro> res =  libroRepository.librosPorIdioma(user);
+        List<Libro> res = libroRepository.librosPorIdioma(user);
         res.forEach(System.out::println);
-
     }
-
-
-
 }
